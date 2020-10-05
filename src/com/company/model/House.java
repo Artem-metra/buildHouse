@@ -14,20 +14,56 @@ public class House {
         this.houseBase = null;
     }
 
-    public class CreateHouseFondation(){
+    public Foundation getHouseFoundation() {
+        return houseFoundation;
+    }
+
+    public void setHouseFoundation(Foundation houseFoundation) {
+        this.houseFoundation = houseFoundation;
+    }
+
+    public Wall getHouseWall() {
+        return houseWall;
+    }
+
+    public void setHouseWall(Wall houseWall) {
+        this.houseWall = houseWall;
+    }
+
+    public Roof getHouseRoof() {
+        return houseRoof;
+    }
+
+    public void setHouseRoof(Roof houseRoof) {
+        this.houseRoof = houseRoof;
+    }
+
+    public Base getHouseBase(){
+        return houseBase;
+    }
+
+    public void setHouseBase(Base houseBase) {
+        this.houseBase = houseBase;
+    }
+
+
+
+//    Создание отдельных элементов дома
+
+    public void CreateHouseFondation(){
         houseFoundation = new Foundation();
 
     }
 
-    public class CreateHouseWall(){
+    public void CreateHouseWall(){
         houseWall = new Wall();
     }
 
-    public class CreateHouseRoof(){
+    public void CreateHouseRoof(){
         houseRoof = new Roof();
     }
 
-    public class CreateHouseBase(){
-        housebase = new Base();
+    public void CreateHouseBase(){
+        houseBase = new Base();
     }
 }
