@@ -10,9 +10,7 @@ public class House {
     private Base houseBase;
 
     public House() {
-        this.houseFoundation = null;
-        this.houseRoof = null;
-        this.houseBase = null;
+
     }
 
     public Foundation getHouseFoundation() {
