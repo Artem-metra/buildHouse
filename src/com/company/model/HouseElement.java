@@ -1,30 +1,43 @@
 package com.company.model;
 
+import java.util.Map;
+
 public class HouseElement {
 
-    private material Material;
-    private buildteh Buildteh;
-    private workers Workers;
+    private Material Material;
+    private BuildTech BuildTech;
+    private com.company.model.Workers Workers;
+    private Map<Workers, Double> requiredWork;
+    private double houseFloors;
 
     public HouseElement(){
         this.Material = null;
-        this.Buildteh = null;
+        this.BuildTech = null;
         this.Workers = null;
     }
 
 
 
 
-    public void setMaterial(material Material) {
-        Material = Material;
+    public void setRequiredWork(Map<com.company.model.Workers, Double> requiredWork) {
+        this.requiredWork = requiredWork;
     }
 
-    public void setBuildteh(buildteh Buildteh) {
-        Buildteh = Buildteh;
+
+    public void setMaterial(Material material){
+        Material = material;
     }
 
-    public void setWorkers(workers Workers) {
-        Workers = Workers;
+
+    public void setBuildTech(BuildTech BuildTech) {
+        BuildTech = BuildTech;
     }
 
+    public void setWorkers(Workers workers) {
+        Workers = workers;
+    }
+
+    public void setHouseFloors(double houseFloors) {
+        this.houseFloors = houseFloors;
+    }
 }
