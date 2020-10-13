@@ -8,8 +8,8 @@ public class Validators {
             Arrays.asList('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
 
     public static boolean hasNoLetters(String s) {
-        for (Character number : LETTERS) {
-            if (s.indexOf(number) != -1) {
+        for (Character letters : LETTERS) {
+            if (s.indexOf(letters) != -1) {
                 return false;
             }
         }

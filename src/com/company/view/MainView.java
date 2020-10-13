@@ -20,11 +20,11 @@ public class MainView {
             System.out.println("Введите команду");
             String command = scanner.nextLine();
             switch (command.toLowerCase()) {
-                case "создать город":
+                case "Построить дом":
                     houseView.runCityCreationProcedure();
                     break;
-                case "выход":
-                    System.out.println("Завершаем работу...");
+                case "Выход":
+                    System.out.println("Завершаем работу");
                     return;
             }
         } while (!Thread.interrupted());

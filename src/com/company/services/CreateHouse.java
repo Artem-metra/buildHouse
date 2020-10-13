@@ -31,6 +31,12 @@ public class CreateHouse {
 
 
 
+
+        newRoof.setBuildTech(BuildTech.DUMP_TRUCK);
+        newRoof.setMaterial(Material.METAL);
+        newRoof.setWorkers(Workers.MASTER);
+
+
     }
 
 
