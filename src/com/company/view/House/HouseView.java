@@ -1,7 +1,7 @@
 package com.company.view.House;
 
 import com.company.model.House;
-import com.company.services.CreateHouse;
+import com.company.services.HouseService;
 import com.company.view.House.readers.FloorReader;
 import com.company.view.House.readers.HouseReader;
 
@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class HouseView {
-    private final CreateHouse createHouse;
+    private final HouseService houseService;
 
     private final static List<HouseReader> READERS =
             Arrays.asList(new FloorReader());
 
-    public HouseView(CreateHouse createHouse) {
-        this.createHouse = createHouse;
+    public HouseView(HouseService houseService) {
+        this.houseService = houseService;
     }
 
     public void runCityCreationProcedure(){
@@ -38,7 +38,7 @@ public class HouseView {
             reader.parseInputIntoHouse(input, newHouse);
         }
 
-        createHouse.linkHouses(newHouse);                                // доделать с этажами(CreateHouse)
+        houseService.linkHouses(newHouse);                                // доделать с этажами(CreateHouse)
         System.out.println("Создан дом с этажами - " + newHouse);
     }
 }
