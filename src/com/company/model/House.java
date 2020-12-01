@@ -1,39 +1,48 @@
 package com.company.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class House {
 
-    private Foundation houseFoundation;
+    private Basement basement;
     private List<Floor> floors;
-    private Roof houseRoof;
-    private Base houseBase;
+    private Roof roof;
 
     public House() {
-
+        floors = new ArrayList<>();
     }
 
-    public Foundation getHouseFoundation() {
-        return houseFoundation;
+    public void setBasement(Basement basement) {
+        this.basement = basement;
     }
 
-    public void setHouseFoundation(Foundation houseFoundation) {
-        this.houseFoundation = houseFoundation;
+    public void addFloor(Floor floor) {
+        this.floors.add(floor);
     }
 
-    public Roof getHouseRoof() {
-        return houseRoof;
+    public void setRoof(Roof roof) {
+        this.roof = roof;
     }
 
-    public void setHouseRoof(Roof houseRoof) {
-        this.houseRoof = houseRoof;
+    public Basement getBasement() {
+        return basement;
     }
 
-    public Base getHouseBase() {
-        return houseBase;
+    public List<Floor> getFloors() {
+        return floors;
     }
 
-    public void setHouseBase(Base houseBase) {
-        this.houseBase = houseBase;
+    public Roof getRoof() {
+        return roof;
+    }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "basement=" + basement +
+                ", floors=" + floors +
+                ", roof=" + roof +
+                '}';
     }
 }

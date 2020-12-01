@@ -1,17 +1,11 @@
 package com.company;
 
-import com.company.model.*;
+import com.company.view.View;
 
 public class Main {
 
-
-
     public static void main(String[] args) {
-
-    House newHouse;
-    newHouse = new House();
-
-
-    
+        View view = new View();
+        view.start();
     }
 }

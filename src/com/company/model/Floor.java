@@ -1,14 +1,31 @@
 package com.company.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * этаж
+ */
 public class Floor {
 
-    List<Integer> floor = new ArrayList<>(1);
+    private final int numberFloor;
+    private final double square;
 
-    Floor newFloor = new Floor();
+    public Floor(int numberFloor, double square) {
+        this.numberFloor = numberFloor;
+        this.square = square;
+    }
 
+    public int getNumberFloor() {
+        return numberFloor;
+    }
 
+    public double getSquare() {
+        return square;
+    }
 
+    @Override
+    public String toString() {
+        return "Floor{" +
+                "numberFloor=" + numberFloor +
+                ", square=" + square +
+                '}';
+    }
 }
