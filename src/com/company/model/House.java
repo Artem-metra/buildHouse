@@ -1,62 +1,48 @@
 package com.company.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class House {
-    String bildMaterials;                            // Строительные материалы
-    String specialEquipment;                         // Какая конкретно техника используется при стройке
-    double specialEqiupment_hm;                      //  Какое количетсво техники используется
-    String workers;                                  // Какой специальности рабочие работают на стройке
-    double workers_hm;                               //  Количество рабочих на стройке
 
+    private Basement basement;
+    private List<Floor> floors;
+    private Roof roof;
 
-    private int basement;                            // подвал
-    private double foundation;
-    private int wall;
-    private int roof;
+    public House() {
+        floors = new ArrayList<>();
+    }
 
-    public House(int basement, double foundation, int wall, int roof){
+    public void setBasement(Basement basement) {
         this.basement = basement;
-        this.foundation = foundation;
-        this.wall = wall;
+    }
+
+    public void addFloor(Floor floor) {
+        this.floors.add(floor);
+    }
+
+    public void setRoof(Roof roof) {
         this.roof = roof;
     }
 
-
-    House(String bildMaterials, String specialEquipment, String workers){
-        this.specialEquipment = specialEquipment;
-        this.bildMaterials = bildMaterials;
-        this.workers = workers;
-
+    public Basement getBasement() {
+        return basement;
     }
 
-
-    public class BasementHouse extends House{
-        private int BasementHouse;
-
-        public BasementHouse(int basement, double foundation, int wall, int roof) {
-            super(basement, foundation, wall, roof);
-        }
-
-        public int getBasementHouse(){
-            return BasementHouse;
-        }
-
-        public void setBasementHouse(int BasementHouse){
-            this.BasementHouse =
-        }
+    public List<Floor> getFloors() {
+        return floors;
     }
 
-
-    public class foundationHouse{
-
-
+    public Roof getRoof() {
+        return roof;
     }
 
-    public class wallHouse{
-
+    @Override
+    public String toString() {
+        return "House{" +
+                "basement=" + basement +
+                ", floors=" + floors +
+                ", roof=" + roof +
+                '}';
     }
-
-    public class roofHouse{
-
-    }
-
 }
