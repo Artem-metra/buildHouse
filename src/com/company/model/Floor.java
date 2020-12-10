@@ -3,12 +3,12 @@ package com.company.model;
 /**
  * этаж
  */
-public class Floor {
+public class Floor extends BaseProperty{
 
     private final int numberFloor;
-    private final double square;
 
     public Floor(int numberFloor, double square) {
+        super(square);
         this.numberFloor = numberFloor;
         this.square = square;
     }
@@ -26,6 +26,9 @@ public class Floor {
         return "Floor{" +
                 "numberFloor=" + numberFloor +
                 ", square=" + square +
+                ", materials=" + materials +
+                ", buildTechs=" + buildTechs +
+                ", workers=" + workers +
                 '}';
     }
 }

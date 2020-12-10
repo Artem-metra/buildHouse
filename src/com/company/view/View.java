@@ -1,8 +1,5 @@
 package com.company.view;
 
-import com.company.model.Construction;
-import com.company.model.House;
-import com.company.model.HouseInfo;
 import com.company.services.HouseService;
 import com.company.view.validator.Validator;
 
@@ -26,8 +23,8 @@ public class View {
         System.out.println("Добро пожаловать в строительство дома");
         while(true) {
             System.out.println("Чтобы начать строить новый дом введите команду");
-            System.out.println("1 - начать, иначе любой символ");
-            if (scannerString.nextLine().equals("1")) {
+            System.out.println("0 - начать, иначе любой символ");
+            if (scannerString.nextLine().equals("0")) {
                 buildHouse();
                 getSmeta();
             } else {
@@ -45,18 +42,46 @@ public class View {
     }
 
     private void getSmeta(){
-        System.out.println("Полная информация о строительстве дома:");
-        HouseInfo houseInfo = houseService.getHouseInfo();
-        House house = houseInfo.getHouse();
-        Construction construction = houseInfo.getConstruction();
-        System.out.println("Дома:");
-        System.out.println("Подвал " + (house.getBasement() != null ? house.getBasement() : "- подвал отсутствует"));
-        System.out.println("Этажи " + house.getFloors());
-        System.out.println("Крыша " + house.getRoof());
-        System.out.println("Строительство:");
-        System.out.println("Затраты рабочих" + construction.getWorkers());
-        System.out.println("Затраты техники" + construction.getBuildTechs());
-        System.out.println("Затраты материалы" + construction.getMaterials());
+        System.out.println("Какую информацию о строительстве вы хотите получить:");
+        boolean showInformation = true;
+        while (showInformation) {
+            System.out.println("1 - Информация о каждом компоненте");
+            System.out.println("2 - Информация о строительных затратах");
+            System.out.println("3 - Информация об затратах на подвал");
+            System.out.println("4 - Информация об затратах на этаж");
+            System.out.println("5 - Информация об затратах на крышу");
+            switch (scannerString.nextLine()) {
+                case "1":
+                    System.out.println("Информация о каждом компоненте:");
+                    System.out.println("Подвал " + (houseService.getBasement() != null ? houseService.getBasement() : "- подвал отсутствует"));
+                    System.out.println("Этажи " + houseService.getFloors());
+                    System.out.println("Крыша " + houseService.getRoof());
+                    break;
+                case "2":
+                    System.out.println("Информация о строительных затратах");
+                    System.out.println("Затраты рабочих " + houseService.getWorkers());
+                    System.out.println("Затраты техники " + houseService.getBuildTechs());
+                    System.out.println("Затраты материалы " + houseService.getMaterials());
+                    break;
+                case "3":
+                    System.out.println("Информация об затратах на подвал");
+                    System.out.println("Затраты на подвал " + houseService.getBasement() != null ?
+                            houseService.getBasement() : "подвал отсутствует");
+                    break;
+                case "4":
+                    System.out.println("Введите номер этажа");
+                    int numberFloor = scannerNumber.nextInt();
+                    System.out.println("Информация об затратах на этаж");
+                    System.out.println("Затраты на " + numberFloor + " этаж " + houseService.getFloor(numberFloor));
+                    break;
+                case "5":
+                    System.out.println("Информация об затратах на крыше");
+                    System.out.println("Затраты на подвал " + houseService.getBasement());
+                    break;
+                default:
+                    showInformation = false;
+            }
+        }
     }
 
     private void newBuild(){

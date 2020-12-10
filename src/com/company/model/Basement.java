@@ -3,22 +3,19 @@ package com.company.model;
 /**
  * подвал
  */
-public class Basement {
+public class Basement extends BaseProperty{
 
-    private double square;
-
-    public Basement(double square) {
-        this.square = square;
-    }
-
-    public double getSquare() {
-        return square;
+    public Basement(Double square) {
+        super(square);
     }
 
     @Override
     public String toString() {
         return "Basement{" +
                 "square=" + square +
+                ", materials=" + materials +
+                ", buildTechs=" + buildTechs +
+                ", workers=" + workers +
                 '}';
     }
 }

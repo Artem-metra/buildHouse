@@ -5,11 +5,13 @@ import java.util.List;
 
 public class House {
 
+    private Double square;
     private Basement basement;
     private List<Floor> floors;
     private Roof roof;
 
-    public House() {
+    public House(Double square) {
+        this.square = square;
         floors = new ArrayList<>();
     }
 
@@ -35,6 +37,15 @@ public class House {
 
     public Roof getRoof() {
         return roof;
+    }
+
+    public Double getSquare() {
+        return square;
+    }
+
+    public House setSquare(Double square) {
+        this.square = square;
+        return this;
     }
 
     @Override

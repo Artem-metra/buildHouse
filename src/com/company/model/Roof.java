@@ -3,11 +3,12 @@ package com.company.model;
 /**
  * крыша
  */
-public class Roof {
+public class Roof extends BaseProperty{
 
     private final String typeRoof;
 
-    public Roof(String typeRoof) {
+    public Roof(String typeRoof, Double square) {
+        super(square);
         this.typeRoof = typeRoof;
     }
 
@@ -19,6 +20,10 @@ public class Roof {
     public String toString() {
         return "Roof{" +
                 "typeRoof='" + typeRoof + '\'' +
+                ", square=" + square +
+                ", materials=" + materials +
+                ", buildTechs=" + buildTechs +
+                ", workers=" + workers +
                 '}';
     }
 }
